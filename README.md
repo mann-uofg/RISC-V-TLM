@@ -173,4 +173,3 @@ RISC-V-TLM/
 - **Mann Modi** (1230348) — University of Guelph
 - **Ritwij Gautam** (1172115) — University of Guelph
 - Base simulator by Màrius Montón — [CARRV 2020](https://carrv.github.io/2020/papers/CARRV2020_paper_7_Monton.pdf)
-```
