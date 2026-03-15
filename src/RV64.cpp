@@ -270,4 +270,12 @@ namespace riscv_tlm {
     std::uint64_t CPURV64::getEndDumpAddress() {
         return register_bank->getValue(Registers<std::uint32_t>::t1);
     }
+
+    uint32_t CPURV64::getCurrentPC() {
+        return static_cast<uint32_t>(register_bank->getPC());
+    }
+
+    uint32_t CPURV64::getCurrentINSTR() {
+        return static_cast<uint32_t>(INSTR);
+    }
 }

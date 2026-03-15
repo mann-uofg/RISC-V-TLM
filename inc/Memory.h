@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <elf.h>
 
 #define SC_INCLUDE_DYNAMIC_PROCESSES
 
@@ -91,6 +92,8 @@ namespace riscv_tlm {
          * @param filename file name to read
          */
         void readHexFile(const std::string &filename);
+
+        void readELFFile(const std::string &filename);
     };
 }
 #endif /* __MEMORY_H__ */

@@ -32,6 +32,9 @@ namespace riscv_tlm {
 #define TIMERCMP_MEMORY_ADDRESS_LO 0x40004008
 #define TIMERCMP_MEMORY_ADDRESS_HI 0x4000400C
 
+#define UART_MEMORY_ADDRESS     0x40008000
+#define GPIO_MEMORY_ADDRESS     0x4000C000
+
 #define TO_HOST_ADDRESS 0x90000000
 
 /**
@@ -69,6 +72,10 @@ namespace riscv_tlm {
          * @brief TLM initiator socket Trace module
          */
         tlm_utils::simple_initiator_socket<BusCtrl> timer_socket;
+
+        tlm_utils::simple_initiator_socket<BusCtrl> uart_socket;
+        
+        tlm_utils::simple_initiator_socket<BusCtrl> gpio_socket;
 
         /**
          * @brief constructor

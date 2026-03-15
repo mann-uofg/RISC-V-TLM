@@ -49,3 +49,16 @@ gh-md-toc
 *.log
 .idea/
 .vscode/
+# Compiler toolchain
+xpack-riscv-none-elf-gcc-13.2.0-2-linux-x64.tar.gz
+/usr/local/xpack-riscv-none-elf-gcc-13.2.0-2/
+
+# Build artifacts
+build/
+
+# Trace output
+trace.csv
+
+# Test binaries
+tests/**/*.elf
+tests/**/*.hex

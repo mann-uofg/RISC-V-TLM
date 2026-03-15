@@ -15,6 +15,7 @@
 #include "tlm.h"
 #include "tlm_utils/simple_initiator_socket.h"
 #include "tlm_utils/simple_target_socket.h"
+#include "Tracer.h"
 
 #include "BASE_ISA.h"
 #include "C_extension.h"
@@ -106,6 +107,9 @@ namespace riscv_tlm {
         bool irq_already_down;
         sc_core::sc_time default_time;
         bool dmi_ptr_valid;
+        Tracer *tracer;
+        virtual uint32_t getCurrentPC() = 0;
+        virtual uint32_t getCurrentINSTR() = 0;
         tlm::tlm_generic_payload trans;
         unsigned char *dmi_ptr = nullptr;
     };
@@ -162,6 +166,8 @@ namespace riscv_tlm {
 
         std::uint64_t getStartDumpAddress() override;
         std::uint64_t getEndDumpAddress() override;
+        uint32_t getCurrentPC() override;
+        uint32_t getCurrentINSTR() override;
     }; // RV32 class
 
     /**
@@ -216,6 +222,8 @@ namespace riscv_tlm {
 
         std::uint64_t getStartDumpAddress() override;
         std::uint64_t getEndDumpAddress() override;
+        uint32_t getCurrentPC() override;
+        uint32_t getCurrentINSTR() override;
     }; // RV64 class
 
 }

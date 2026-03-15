@@ -1,11 +1,9 @@
 /*!
- \file Trace.h
- \brief Basic TLM-2 Trace module
- \author Màrius Montón
- \date September 2018
+ \file UART.h
+ \brief Basic UART peripheral
+ \date 2026
 */
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 #pragma once
 
 #include "systemc"
@@ -14,12 +12,12 @@
 
 namespace riscv_tlm::peripherals {
 
-    class Trace : sc_core::sc_module {
+    class UART : sc_core::sc_module {
     public:
-        tlm_utils::simple_target_socket<Trace> socket;
+        tlm_utils::simple_target_socket<UART> socket;
 
-        explicit Trace(sc_core::sc_module_name const &name);
-        ~Trace() override;
+        explicit UART(sc_core::sc_module_name const &name);
+        ~UART() override = default;
 
     private:
         void b_transport(tlm::tlm_generic_payload &trans, sc_core::sc_time &delay);

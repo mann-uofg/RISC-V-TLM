@@ -21,7 +21,22 @@ namespace riscv_tlm {
 
         dmi_allowed = false;
         program_counter = 0;
-        readHexFile(filename);
+
+        // Auto-detect ELF vs HEX by checking magic bytes
+        std::ifstream testFile(filename, std::ios::binary);
+        if (testFile.is_open()) {
+            unsigned char magic[4];
+            testFile.read(reinterpret_cast<char*>(magic), 4);
+            testFile.close();
+            if (magic[0] == 0x7F && magic[1] == 'E' &&
+                magic[2] == 'L' && magic[3] == 'F') {
+                readELFFile(filename);
+            } else {
+                readHexFile(filename);
+            }
+        } else {
+            SC_REPORT_ERROR("Memory", "Open file error");
+        }
 
         logger = spdlog::get("my_logger");
         logger->debug("Using file {}", filename);
@@ -204,4 +219,55 @@ namespace riscv_tlm {
             SC_REPORT_ERROR("Memory", "Open file error");
         }
     }
+
+    void Memory::readELFFile(const std::string &filename) {
+        std::ifstream file(filename, std::ios::binary);
+
+        if (!file.is_open()) {
+            SC_REPORT_ERROR("Memory", "Open ELF file error");
+            return;
+        }
+
+        // Read ELF header
+        Elf32_Ehdr ehdr;
+        file.read(reinterpret_cast<char*>(&ehdr), sizeof(ehdr));
+
+        // Validate ELF magic
+        if (ehdr.e_ident[EI_MAG0] != ELFMAG0 ||
+            ehdr.e_ident[EI_MAG1] != ELFMAG1 ||
+            ehdr.e_ident[EI_MAG2] != ELFMAG2 ||
+            ehdr.e_ident[EI_MAG3] != ELFMAG3) {
+            SC_REPORT_ERROR("Memory", "Invalid ELF magic");
+            return;
+        }
+
+        // Set program counter from ELF entry point
+        program_counter = ehdr.e_entry;
+        std::cout << "ELF entry point: 0x" << std::hex
+                << program_counter << std::dec << std::endl;
+
+        // Load each LOAD segment into memory
+        for (int i = 0; i < ehdr.e_phnum; i++) {
+            Elf32_Phdr phdr;
+            file.seekg(ehdr.e_phoff + i * sizeof(Elf32_Phdr));
+            file.read(reinterpret_cast<char*>(&phdr), sizeof(phdr));
+
+            if (phdr.p_type == PT_LOAD && phdr.p_filesz > 0) {
+                if (phdr.p_paddr + phdr.p_filesz > Memory::SIZE) {
+                    SC_REPORT_ERROR("Memory", "ELF segment exceeds memory size");
+                    return;
+                }
+                file.seekg(phdr.p_offset);
+                file.read(reinterpret_cast<char*>(&mem[phdr.p_paddr]),
+                        phdr.p_filesz);
+                std::cout << "ELF loaded segment at 0x" << std::hex
+                        << phdr.p_paddr << ", size=0x"
+                        << phdr.p_filesz << std::dec << std::endl;
+            }
+        }
+
+        file.close();
+        dmi_allowed = true;
+    }
+
 }

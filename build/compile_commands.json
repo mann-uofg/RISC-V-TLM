@@ -1,0 +1,112 @@
+[
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/A_extension.cpp.o -c /project/src/A_extension.cpp",
+  "file": "/project/src/A_extension.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/BASE_ISA.cpp.o -c /project/src/BASE_ISA.cpp",
+  "file": "/project/src/BASE_ISA.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/BusCtrl.cpp.o -c /project/src/BusCtrl.cpp",
+  "file": "/project/src/BusCtrl.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/CPU.cpp.o -c /project/src/CPU.cpp",
+  "file": "/project/src/CPU.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/C_extension.cpp.o -c /project/src/C_extension.cpp",
+  "file": "/project/src/C_extension.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Debug.cpp.o -c /project/src/Debug.cpp",
+  "file": "/project/src/Debug.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/F_extension.cpp.o -c /project/src/F_extension.cpp",
+  "file": "/project/src/F_extension.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/GPIO.cpp.o -c /project/src/GPIO.cpp",
+  "file": "/project/src/GPIO.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Instruction.cpp.o -c /project/src/Instruction.cpp",
+  "file": "/project/src/Instruction.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/M_extension.cpp.o -c /project/src/M_extension.cpp",
+  "file": "/project/src/M_extension.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Memory.cpp.o -c /project/src/Memory.cpp",
+  "file": "/project/src/Memory.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/MemoryInterface.cpp.o -c /project/src/MemoryInterface.cpp",
+  "file": "/project/src/MemoryInterface.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Performance.cpp.o -c /project/src/Performance.cpp",
+  "file": "/project/src/Performance.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/RV32.cpp.o -c /project/src/RV32.cpp",
+  "file": "/project/src/RV32.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/RV64.cpp.o -c /project/src/RV64.cpp",
+  "file": "/project/src/RV64.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Registers.cpp.o -c /project/src/Registers.cpp",
+  "file": "/project/src/Registers.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Simulator.cpp.o -c /project/src/Simulator.cpp",
+  "file": "/project/src/Simulator.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Timer.cpp.o -c /project/src/Timer.cpp",
+  "file": "/project/src/Timer.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Trace.cpp.o -c /project/src/Trace.cpp",
+  "file": "/project/src/Trace.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/Tracer.cpp.o -c /project/src/Tracer.cpp",
+  "file": "/project/src/Tracer.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/UART.cpp.o -c /project/src/UART.cpp",
+  "file": "/project/src/UART.cpp"
+},
+{
+  "directory": "/project/build",
+  "command": "/usr/bin/c++  -DSPDLOG_COMPILED_LIB -I/project/./inc -isystem /usr/src/riscv64/systemc-2.3.3/src -isystem /usr/local/include    -O3 -g -Wall -Wextra -Wunused-function -Wpedantic -pthread -std=c++1z -o CMakeFiles/RISCV_TLM.dir/src/extension_base.cpp.o -c /project/src/extension_base.cpp",
+  "file": "/project/src/extension_base.cpp"
+}
+]

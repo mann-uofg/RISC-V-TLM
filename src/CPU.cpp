@@ -6,6 +6,7 @@
  */
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "CPU.h"
+#include "Tracer.h"
 
 namespace riscv_tlm {
 
@@ -21,6 +22,9 @@ namespace riscv_tlm {
         dmi_ptr_valid = false;
 
         irq_already_down = false;
+
+        tracer = new Tracer("trace.csv");
+
         interrupt = false;
 
         irq_line_socket.register_b_transport(this, &CPU::call_interrupt);
@@ -45,33 +49,30 @@ namespace riscv_tlm {
     }
 
     CPU::~CPU() {
-        if (m_qk) {
-            delete m_qk;
-            m_qk = nullptr;
+        if (tracer) {
+            delete tracer;
+            tracer = nullptr;
         }
     }
 
     [[noreturn]] void CPU::CPU_thread() {
-
         while (true) {
+            /* Capture PC before execution (correct instruction address) */
+            uint32_t pc_before = getCurrentPC();
 
             /* Process one instruction */
             CPU_step();
 
+            /* Log only real instructions (guard against post-ECALL zeros) */
+            uint32_t instr = getCurrentINSTR();
+            if (instr != 0) {
+                tracer->log(pc_before, instr);
+            }
+
             /* Process IRQ (if any) */
             cpu_process_IRQ();
 
-            /* Fixed instruction time to 10 ns (i.e. 100 MHz) */
-//#define USE_QK
-#ifdef USE_QK
-            // Model time used for additional processing
-            m_qk->inc(default_time);
-            if (m_qk->need_sync()) {
-                m_qk->sync();
-            }
-#else
             sc_core::wait(default_time);
-#endif
-        } // while(1)
-    } // CPU_thread
+        }
+    }
 }
